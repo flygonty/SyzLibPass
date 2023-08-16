@@ -1,4 +1,4 @@
-# HelloPass-LLVM
+# SyzLibPass
 Getting started for LLVM pass writing
 
 ## Setup and Run
@@ -29,7 +29,7 @@ clang -S -fno-discard-value-names -emit-llvm test.c -o test.ll
 ```
 6. After generating test.ll, run the following command to test the LLVM Pass. 
 ```bash
-opt -load-pass-plugin ../Pass/build/libLLVMValueNumberingPass.so  -passes=value-numbering test.ll
+opt -load-pass-plugin ../Pass/build/libLLVMLibAnalysisPass.so  -passes=lib-analysis test.bc
 ```
 7. If you want to see debug information, use -debug-pass-manager flag.
 ```bash
